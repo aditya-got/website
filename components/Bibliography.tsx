@@ -24,7 +24,7 @@ const FilterButton: React.FC<{ text: string; active: boolean; onClick: () => voi
 
 const Bibliography: React.FC = () => {
     const [activeFilter, setActiveFilter] = useState('All');
-    const filters = ['All', 'Leadership/Management', 'Culture/Teams', 'Process/Systems', 'Software Development', 'Personal Growth'];
+    const filters = ['All', 'Leadership/Management', 'Culture/Teams', 'Software Development', 'Personal Growth'];
 
     const filteredBooks = booksData.filter(book => activeFilter === 'All' || book.category === activeFilter);
     

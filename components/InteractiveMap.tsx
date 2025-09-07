@@ -11,7 +11,8 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({ activeFilter }) => {
     const svgRef = useRef<SVGSVGElement | null>(null);
     const [nodes, setNodes] = useState<MindMapNode[]>([]);
     const [links, setLinks] = useState<MindMapLink[]>([]);
-    const simulationRef = useRef<d3.Simulation<MindMapNode, MindMapLink>>();
+    // FIX: Initialize useRef with null to provide an initial value, satisfying stricter type checking.
+    const simulationRef = useRef<d3.Simulation<MindMapNode, MindMapLink> | null>(null);
 
     const [hoveredNode, setHoveredNode] = useState<MindMapNode | null>(null);
     // FIX: Wrap d3.zoomIdentity in a function for lazy initialization with useState.
